@@ -1,0 +1,20 @@
+{
+    "name": "sail/ioctest",
+    "description": "php IOC容器的学习与使用",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "M先生",
+            "email": "582639426@qq.com"
+        }
+    ],
+    "require": {
+        "ext-redis": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "App/"
+        }
+    }
+}
