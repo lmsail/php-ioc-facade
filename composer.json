@@ -9,13 +9,7 @@
             "email": "582639426@qq.com"
         }
     ],
-<<<<<<< HEAD
     "require": {},
-=======
-    "require": {
-        "ext-redis": "*"
-    },
->>>>>>> 6b50caac589b392534ffe6bd72e4bb8bd88dfb11
     "autoload": {
         "psr-4": {
             "App\\": "App/"

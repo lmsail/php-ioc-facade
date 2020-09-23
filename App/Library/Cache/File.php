@@ -2,11 +2,7 @@
 
 namespace App\Library\Cache;
 
-<<<<<<< HEAD
 use App\Library\Psr\CacheInterface;
-=======
-use Psr\SimpleCache\CacheInterface;
->>>>>>> 6b50caac589b392534ffe6bd72e4bb8bd88dfb11
 
 class File implements CacheInterface
 {

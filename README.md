@@ -1,10 +1,7 @@
 ## 探索 PHP 设计模式之IOC容器+门面模式
 
-<<<<<<< HEAD
 ---
 
-=======
->>>>>>> 6b50caac589b392534ffe6bd72e4bb8bd88dfb11
 ### 整体架构（目录结构）
 
 ```txt
@@ -40,10 +37,6 @@
 
 namespace App;
 
-<<<<<<< HEAD
-=======
-use Closure;
->>>>>>> 6b50caac589b392534ffe6bd72e4bb8bd88dfb11
 use InvalidArgumentException;
 use ReflectionClass;
 use ReflectionException;
@@ -79,10 +72,6 @@ class Container
         if (is_null(self::$instance)) {
             self::$instance = new static;
         }
-<<<<<<< HEAD
-=======
-
->>>>>>> 6b50caac589b392534ffe6bd72e4bb8bd88dfb11
         return self::$instance;
     }
 
@@ -98,11 +87,6 @@ class Container
             foreach ($abstract as $alias => $item) {
                 $this->register($alias, $item);
             }
-<<<<<<< HEAD
-=======
-        } elseif( $concrete instanceof Closure ) {
-            $this->bind[$abstract] = $concrete;
->>>>>>> 6b50caac589b392534ffe6bd72e4bb8bd88dfb11
         } else {
             $abstract = $this->getAlias($abstract);
             $this->bind[$abstract] = $concrete;
@@ -150,14 +134,9 @@ class Container
      * 调用反射执行类的实例化 支持依赖注入
      * @access public
      * @param string $class 类名
-<<<<<<< HEAD
      * @param array $vars 参数
      * @return mixed
      * @throws \Exception
-=======
-     * @param array  $vars  参数
-     * @return mixed
->>>>>>> 6b50caac589b392534ffe6bd72e4bb8bd88dfb11
      */
     public function invokeClass(string $class, array $vars = [])
     {
@@ -183,19 +162,11 @@ class Container
         if ($reflect->getNumberOfParameters() == 0) {
             return [];
         }
-<<<<<<< HEAD
-=======
-
->>>>>>> 6b50caac589b392534ffe6bd72e4bb8bd88dfb11
         // 判断数组类型 数字数组时按顺序绑定参数
         reset($vars);
         $type   = key($vars) === 0 ? 1 : 0;
         $params = $reflect->getParameters();
         $args   = [];
-<<<<<<< HEAD
-=======
-
->>>>>>> 6b50caac589b392534ffe6bd72e4bb8bd88dfb11
         foreach ($params as $param) {
             $class = $param->getClass();
             if ($class) {
@@ -206,10 +177,6 @@ class Container
                 throw new InvalidArgumentException('method param miss:' . $param->getName());
             }
         }
-<<<<<<< HEAD
-=======
-
->>>>>>> 6b50caac589b392534ffe6bd72e4bb8bd88dfb11
         return $args;
     }
 
@@ -224,20 +191,12 @@ class Container
     {
         $array = $vars;
         $value = array_shift($array);
-<<<<<<< HEAD
-=======
-
->>>>>>> 6b50caac589b392534ffe6bd72e4bb8bd88dfb11
         if ($value instanceof $className) {
             $result = $value;
             array_shift($vars);
         } else {
             $result = $this->make($className);
         }
-<<<<<<< HEAD
-=======
-
->>>>>>> 6b50caac589b392534ffe6bd72e4bb8bd88dfb11
         return $result;
     }
 }
@@ -287,10 +246,7 @@ echo $container->make('cache')->set('test', '123') . PHP_EOL;
 echo Cache::set('test2', '456') . PHP_EOL;
 ```
 
-<<<<<<< HEAD
 ---
-=======
->>>>>>> 6b50caac589b392534ffe6bd72e4bb8bd88dfb11
 
 ### 依赖注入（DI）
 
@@ -340,10 +296,7 @@ $container = Container::getInstance()->register('a', A::class);
 echo $container->make('a')->testTwo();
 ```
 
-<<<<<<< HEAD
 ---
-=======
->>>>>>> 6b50caac589b392534ffe6bd72e4bb8bd88dfb11
 
 ### 外观模式（Facade）
 
@@ -486,10 +439,7 @@ interface CacheInterface
 
 ```
 
-<<<<<<< HEAD
 ---
-=======
->>>>>>> 6b50caac589b392534ffe6bd72e4bb8bd88dfb11
 
 ### 参考与借鉴
 
@@ -499,9 +449,5 @@ interface CacheInterface
 
 ### 接下来（加油...）
 
-<<<<<<< HEAD
 > 可以自己动手，结合IOC容器 + 依赖注入 + 外观模式实现自己的小框架，更加深入的了解现代 php 编码的设计模式！！
 
-=======
-> 可以自己动手，结合IOC容器 + 依赖注入 + 外观模式实现自己的小框架，更加深入的了解现代 php 编码的设计模式！！
->>>>>>> 6b50caac589b392534ffe6bd72e4bb8bd88dfb11
