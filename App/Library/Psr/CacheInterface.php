@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 namespace App\Library\Psr;
+=======
+namespace Psr\SimpleCache;
+>>>>>>> 6b50caac589b392534ffe6bd72e4bb8bd88dfb11
 
 interface CacheInterface
 {

@@ -16,8 +16,11 @@ $container = Container::getInstance()->register($provider);
 # 通过别名 cache 获取实例对象并调用 set 方法
 echo $container->make('cache')->set('test', '123') . PHP_EOL;
 
+<<<<<<< HEAD
 # 也可直接传入类对象
 echo $container->make(\App\Library\Cache\Redis::class)->set('test', '123') . PHP_EOL;
 
+=======
+>>>>>>> 6b50caac589b392534ffe6bd72e4bb8bd88dfb11
 # 使用门面模式直接使用 Cache 实例对象调用 set 方法
 echo Cache::set('test2', '456') . PHP_EOL;
